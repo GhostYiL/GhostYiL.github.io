@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <title>Lovense Remote</title>
+    <link
+      rel="shortcut icon"
+      href="https://cdn.glitch.com/a89c5220-d889-4680-8cee-92469a2b14ec%2FIcon.ico?v=1614121963252"
+    />
+    <link rel="stylesheet" href="/style.css">
+    
+    <script src="/websocket.js" defer></script>
+    <script src="/client.js" defer></script>
+  </head>
+  <style>
+    body {
+      background: url(https://i.imgur.com/LqzdAuu.png);
+    }
+  </style>
+  <body>
+    <div id="box">
+      <h2>Remote Socket</h2>
+      <div id="serverStatus">Server Status: Connecting...😎</div>
+      <div id="codeDisplay" style="display: none;">
+        Code: <b id="id"></b> (send this to your friend with the mod)
+      </div>
+      <br />
+      <button onclick="searchForToys()" id="searchButton">
+        Search for toys
+      </button>
+
+      <table id="table"></table>
+
+      <div id="error" style="display: none;">
+        <br />
+        Failed to find toys, be sure you followed these steps:
+        <br />1. Connect your phone to the same wifi you open this webpage on
+        <br />2. Connect your toy to the Lovense Connect app (the pink one)
+        <br />3. Try clicking refresh
+
+        <div>
+          <br />
+          You can also type your local URL and click refresh again<br />
+          (Click the green shield at the top right of the app)<br />
+          <input
+            type="text"
+            placeholder="https://"
+            style="width: 55px"
+            disabled
+          />
+          <input
+            type="text"
+            placeholder="192-168-1-100"
+            style="width: 100px"
+            id="ip"
+          />
+          <input
+            type="text"
+            placeholder=".lovense.club:34568/GetToys"
+            style="width: 185px"
+            disabled
+          />
+        </div>
+      </div>
+      <br />
+      <main>Clients connected: <strong class="count">&hellip;</strong></main>
+      <h4>
+        Leave this webpage open. It sends controls from the mod server(from your
+        friend with the mod) to the Lovense Connect app on your phone.
+      </h4>
+    </div>
+
+    <script src="/script.js" defer></script>
+  </body>
+</html>
