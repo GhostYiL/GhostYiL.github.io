@@ -1,6 +1,6 @@
 /* Webpage Client */
 
-var ws = new WebSocket("wss://salty-adventures.glitch.me");
+var ws = new WebSocket("wss://https://ghostyil.github.io:8080");
 ws.onopen = function() {
   document.getElementById("serverStatus").innerText =
     "Server Status: Connected to server 😘";
